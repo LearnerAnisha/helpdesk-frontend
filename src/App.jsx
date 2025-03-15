@@ -8,7 +8,9 @@ function App() {
 
   useEffect(() => {
     requestAnimationFrame(() => {
-      setIsRendering(false);
+      setTimeout(() => {
+        setIsRendering(false);
+      }, 650)
     });
   }, []);
 
