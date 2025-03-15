@@ -1,11 +1,26 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import Preloader from "./Components/Preloader";
+import Navbar from "./Components/Navbar";
+import { Outlet } from "react-router-dom";
 
-const App = () => {
+function App() {
+  const [isRendering, setIsRendering] = useState(true);
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      setIsRendering(false);
+    });
+  }, []);
+
   return (
-    <div className='w-full h-dvh flex items-center justify-center font-bold font-sans text-3xl'>
-      Welcome to Helpdesk.
-    </div>
-  )
+    <>
+      {isRendering && <Preloader />}
+      <div className={`content ${isRendering ? "hidden" : ""}`}>
+        <Navbar />
+        <Outlet /> {/* Renders nested routes */}
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
