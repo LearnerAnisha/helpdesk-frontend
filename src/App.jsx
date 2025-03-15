@@ -17,7 +17,7 @@ function App() {
       {isRendering && <Preloader />}
       <div className={`content ${isRendering ? "hidden" : ""}`}>
         <Navbar />
-        <Outlet /> {/* Renders nested routes */}
+        <Outlet />
       </div>
     </>
   );
