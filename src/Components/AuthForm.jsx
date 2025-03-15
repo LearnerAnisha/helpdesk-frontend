@@ -5,7 +5,6 @@ import "./form.css";
 import { FaGooglePlusG, FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { z } from "zod";
 
-
 // Define password validation schema
 const passwordSchema = z.string()
     .min(8, "Password must be at least 8 characters")
@@ -97,76 +96,82 @@ const AuthForm = () => {
     };
 
     return (
-        <div className={`container ${isSignUp ? "active" : ""}`}>
-            {/* Sign Up Form */}
-            <div className="form-container sign-up">
-                <form onSubmit={(e) => handleSubmit(e, "Sign Up")}>
-                    <h1>Create Account</h1>
-                    <div className="social-icons">
-                        <a href="#" className="icon"><FaGooglePlusG /></a>
-                        <a href="#" className="icon"><FaFacebookF /></a>
-                        <a href="#" className="icon"><FaGithub /></a>
-                        <a href="#" className="icon"><FaLinkedinIn /></a>
-                    </div>
-                    <span>or use your email for registration</span>
+        (
+            <div className={`container ${isSignUp ? "active" : ""}`} >
+                {/* Sign Up Form */}
+                <div className="form-container sign-up">
+                    <form onSubmit={(e) => handleSubmit(e, "Sign Up")}>
+                        <h1>Create Account</h1>
+                        <div className="social-icons">
+                            <a href="#" className="icon"><FaGooglePlusG /></a>
+                            <a href="#" className="icon"><FaFacebookF /></a>
+                            <a href="#" className="icon"><FaGithub /></a>
+                            <a href="#" className="icon"><FaLinkedinIn /></a>
+                        </div>
+                        <span>or use your email for registration</span>
 
-                    <input type="text" name="name" placeholder="Name"
-                        value={formData.name} onChange={handleInputChange} onBlur={handleBlur} />
-                    {touched.name && errors.name && <p className="error">{errors.name}</p>}
+                        <input type="text" name="name" placeholder="Name"
+                            value={formData.name} onChange={handleInputChange} onBlur={handleBlur} />
+                        {touched.name && errors.name && <p className="error">{errors.name}</p>}
 
-                    <input type="email" name="email" placeholder="Email"
-                        value={formData.email} onChange={handleInputChange} onBlur={handleBlur} />
-                    {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                        <input type="email" name="email" placeholder="Email"
+                            value={formData.email} onChange={handleInputChange} onBlur={handleBlur} />
+                        {touched.email && errors.email && <p className="error">{errors.email}</p>}
 
-                    <input type="password" name="password" placeholder="Password"
-                        value={formData.password} onChange={handleInputChange} onBlur={handleBlur} />
-                    {touched.password && errors.password && <p className="error">{errors.password}</p>}
+                        <input type="password" name="password" placeholder="Password"
+                            value={formData.password} onChange={handleInputChange} onBlur={handleBlur} />
+                        {touched.password && errors.password && <p className="error">{errors.password}</p>}
 
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
+                        <button type="submit">Sign Up</button>
+                        <p className="text-[12px] absolute bottom-4">Already have an Account?<span className="text-blue-600 cursor-pointer" onClick={() => setIsSignUp(false)}>Sign In</span></p>
 
-            {/* Sign In Form */}
-            <div className="form-container sign-in">
-                <form onSubmit={(e) => handleSubmit(e, "Sign In")}>
-                    <h1>Sign In</h1>
-                    <div className="social-icons">
-                        <a href="#" className="icon"><FaGooglePlusG /></a>
-                        <a href="#" className="icon"><FaFacebookF /></a>
-                        <a href="#" className="icon"><FaGithub /></a>
-                        <a href="#" className="icon"><FaLinkedinIn /></a>
-                    </div>
-                    <span>or use your email and password</span>
+                    </form>
+                </div>
 
-                    <input type="email" name="email" placeholder="Email"
-                        value={formData.email} onChange={handleInputChange} onBlur={handleBlur} />
-                    {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                {/* Sign In Form */}
+                <div className="form-container sign-in">
+                    <form onSubmit={(e) => handleSubmit(e, "Sign In")}>
+                        <h1>Sign In</h1>
+                        <div className="social-icons">
+                            <a href="#" className="icon"><FaGooglePlusG /></a>
+                            <a href="#" className="icon"><FaFacebookF /></a>
+                            <a href="#" className="icon"><FaGithub /></a>
+                            <a href="#" className="icon"><FaLinkedinIn /></a>
+                        </div>
+                        <span>or use your email and password</span>
 
-                    <input type="password" name="password" placeholder="Password"
-                        value={formData.password} onChange={handleInputChange} onBlur={handleBlur} />
-                    {touched.password && errors.password && <p className="error">{errors.password}</p>}
+                        <input type="email" name="email" placeholder="Email"
+                            value={formData.email} onChange={handleInputChange} onBlur={handleBlur} />
+                        {touched.email && errors.email && <p className="error">{errors.email}</p>}
 
-                    <a href="#">Forgot Your Password?</a>
-                    <button type="submit">Sign In</button>
-                </form>
-            </div>
+                        <input type="password" name="password" placeholder="Password"
+                            value={formData.password} onChange={handleInputChange} onBlur={handleBlur} />
+                        {touched.password && errors.password && <p className="error">{errors.password}</p>}
 
-            {/* Toggle Section */}
-            <div className="toggle-container">
-                <div className="toggle">
-                    <div className="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p className="text">Enter your personal details to use all site features</p>
-                        <button onClick={() => setIsSignUp(false)}>Sign In</button>
-                    </div>
-                    <div className="toggle-panel toggle-right">
-                        <h1>Hello, Friend!</h1>
-                        <p className="text">Register with your personal details to use all site features</p>
-                        <button onClick={() => setIsSignUp(true)}>Sign Up</button>
+                        <a href="#">Forgot Your Password?</a>
+                        <button type="submit">Sign In</button>
+                        <p className="text-[12px] absolute bottom-4">Don't have an Account?<span className="text-blue-600 cursor-pointer" onClick={() => setIsSignUp(true)}>Sign Up</span></p>
+
+                    </form>
+                </div>
+
+                {/* Toggle Section */}
+                <div className="toggle-container">
+                    <div className="toggle">
+                        <div className="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p className="text">Enter your personal details to use all site features</p>
+                            <button onClick={() => setIsSignUp(false)}>Sign In</button>
+                        </div>
+                        <div className="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p className="text">Register with your personal details to use all site features</p>
+                            <button onClick={() => setIsSignUp(true)}>Sign Up</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        )
     );
 };
 
