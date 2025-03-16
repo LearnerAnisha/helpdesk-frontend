@@ -96,7 +96,8 @@ const AuthForm = () => {
     };
 
     return (
-        (
+
+        <div className="authbody">
             <div className={`container ${isSignUp ? "active" : ""}`} >
                 {/* Sign Up Form */}
                 <div className="form-container sign-up">
@@ -171,7 +172,8 @@ const AuthForm = () => {
                     </div>
                 </div>
             </div>
-        )
+        </div>
+
     );
 };
 
