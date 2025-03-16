@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Preloader = () => {
     return (
-        <StyledWrapper className='items-center flex flex-col'>
+        <StyledWrapper>
             <div className="loading">
                 <span />
                 <span />
@@ -11,12 +11,24 @@ const Preloader = () => {
                 <span />
                 <span />
             </div>
-            <h1 className='text-3xl font-semibold'>Welcome to Helpdesk!</h1>
+            <h1 className="text-3xl font-semibold mt-4">Welcome to Helpdesk!</h1>
         </StyledWrapper>
     );
 }
 
 const StyledWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
   .loading {
    --speed-of-animation: 0.9s;
    --gap: 6px;
@@ -26,11 +38,7 @@ const StyledWrapper = styled.div`
    --fourth-color: #49a84c;
    --fifth-color: #2196f3;
    display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 200px;
    gap: 8px;
-   height: 200px;
   }
 
   .loading span {
@@ -64,10 +72,10 @@ const StyledWrapper = styled.div`
    0%, 40%, 100% {
     transform: scaleY(0.05);
    }
-
    20% {
     transform: scaleY(1);
    }
-  }`;
+  }
+`;
 
 export default Preloader;
