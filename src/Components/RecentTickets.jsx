@@ -15,9 +15,9 @@ const TicketStatus = ({ status }) => {
 
 const RecentTickets = () => {
     return (
-        <div className="!my-10 flex-col !h-[50dvh] absolute_center">
+        <div className="!my-10 sm:!my-10 w-full flex flex-col items-center shrink-0 flex-wrap ">
             <h1 className="text-2xl font-bold !mb-4">Recent Tickets</h1>
-            <div className="!space-x-10">
+            <div className="flex flex-col items-center sm:flex-row !space-y-5 sm:!space-y-0 sm:!space-x-10">
                 {tickets.map((ticket) => (
                     <span key={ticket.id} className="border-b py-2">
                         {ticket.title} - <TicketStatus status={ticket.status} />

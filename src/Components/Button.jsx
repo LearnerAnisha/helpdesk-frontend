@@ -4,19 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Button = ({ classes, title, path }) => {
     return (
-        //     background - color: #512da8;
-        // color: #fff;
-        // font - size: 12px;
-        // padding: 10px 45px;
-        // border: 1px solid transparent;
-        // border - radius: 8px;
-        // font - weight: 600;
-        // letter - spacing: 0.5px;
-        // text - transform: uppercase;
-        // margin - top: 10px;
-        // cursor: pointer;
         <>
-            <Link to={path} className={clsx(`${classes} rounded-[10px] !px-5 !py-2 !mt-[10px] uppercase font-medium text-white cursor-pointer button-clr shadow-md shadow-cyan-950`)}>{title}</Link>
+            <Link to={path} className={clsx(`${classes}  text-[11px] sm:text-[15px] sm:rounded-[10px] sm:!px-5 sm:!py-2  !px-3 !py-1  rounded-sm !mt-[10px] uppercase sm:font-medium text-white cursor-pointer button-clr shadow-md shadow-cyan-950`)}>{title}</Link>
         </>
     )
 }

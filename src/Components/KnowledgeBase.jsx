@@ -10,7 +10,7 @@ const KnowledgeBase = () => {
     const [query, setQuery] = useState("");
 
     return (
-        <div className="absolute_center flex-col !h-[50dvh] py-10">
+        <div className="absolute_center flex-col !h-[50vh]">
             <h2 className="text-2xl font-bold !mb-3">Knowledge Base</h2>
             <input
                 type="text"
@@ -18,7 +18,7 @@ const KnowledgeBase = () => {
                 className="outline-none !px-4 !py-1 bg-[rgba(255,255,255,0.5)]  border-none rounded w-64 !mb-3"
                 onChange={(e) => setQuery(e.target.value)}
             />
-            <div class="!space-y-2 text-[15px] text-center w-full h-[40dvh]">
+            <div class="!space-y-2 text-[13px] sm:text-[15px] text-center w-full h-[20dvh]">
                 {articles
                     .filter((article) => article.title.toLowerCase().includes(query.toLowerCase()))
                     .map((article, index) => (

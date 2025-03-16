@@ -8,9 +8,9 @@ const Navbar = ({
 }) => {
     return (
 
-        <nav className={clsx("fixed top-3 left-[50%] translate-x-[-50%] w-full sm:w-[60vw] h-[50px] sm:h-[70px] flex items-center justify-between !px-2 !sm:px-10  shadow-lg backdrop-blur-[5px] bg-[rgba(255,255,255,0.2)] rounded-md", classes)}>
-            {logo && <Link to="/" className="text-xl font-semibold sm:w-[30%]">{logo}</Link>}
-            <div className="grow flex justify-end gap-9">
+        <nav className={clsx("fixed top-3 left-[50%] translate-x-[-50%] w-[90vw] sm:w-[60vw] h-[50px] sm:h-[70px] flex items-center justify-between !px-2 sm:!px-10  shadow-lg backdrop-blur-[5px] bg-[rgba(255,255,255,0.2)] rounded-md", classes)}>
+            {logo && <Link to="/" className="sm:text-xl font-semibold sm:w-[30%]">{logo}</Link>}
+            <div className="grow flex justify-end gap-2 text-[12px] sm:text-[18px] sm:gap-9">
                 {links
                     .filter(link => link.name && link.path) // Ensure valid links
                     .map((link, index) => (

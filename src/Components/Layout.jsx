@@ -2,7 +2,7 @@ import React from 'react'
 import Home from '../pages/Home'
 import FeaturesSection from './FeaturesSection'
 import RecentTickets from './RecentTickets'
-import KnowledgeBase from './Knowledgebase'
+import KnowledgeBase from './KnowledgeBase'
 import Footer from './Footer'
 
 const Layout = () => {
