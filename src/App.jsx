@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       {isRendering && <Preloader />}
-      <div className={`content ${isRendering ? "hidden" : ""}`}>
+      <div className={`${isRendering ? "hidden" : ""}`}>
         <Navbar />
         <Outlet />
       </div>

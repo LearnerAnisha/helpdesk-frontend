@@ -2,7 +2,7 @@ import Navbar from "../Components/Navbar";
 
 const Dashboard = () => {
     return (
-        <div className="content">
+        <div className="absolute_center">
             <h1>Protected Dashboard Page</h1>
         </div>
     )
